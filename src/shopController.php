@@ -33,4 +33,15 @@ class ShopController extends BaseController
 
         $this->display("shop/shop.html.twig", $data);
     }
+	
+	 public function getCart(array $data = [])
+    {
+        $data["products"] = Cart::getAllProducts();
+
+        $data["cart"]["info"] = Cart::getCartInfo();
+        $data["cart"]["products"] = Cart::getAllProducts();
+        
+        $this->display("shop/cart.html.twig", $data);
+    }
 }
+
