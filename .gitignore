@@ -1,0 +1,12 @@
+# ignore composer vendor directory
+/vendor
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore packaged files
+*.rar
+*.tar
+*.zip
