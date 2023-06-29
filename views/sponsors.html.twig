@@ -1,0 +1,49 @@
+{% set navActive = "informations" %}
+
+{% extends "templates/user.html.twig" %}
+
+{% block content %}
+    <section id="display">
+    
+        {{ include('includes/boxMessages.html.twig') }}
+
+        <div class="header">
+            <h1><i class="fa-solid fa-address-card fa-lg fa-fade" style="--fa-fade-opacity: 0.8;"></i> {{ "Mes informations"|trans }}</h1>
+            <p>{{ "Vous pouvez modifiez vos coordonnées ci-dessous"|trans }}.</p>
+        </div>
+
+        <div class="container-user-form">
+            <form action="{{ HERE }}" method="POST" id="infoForm">
+                <div class="box-input-txt">
+                    <label>
+                        <span>{{ "Prénom"|trans }} :</span>
+                        <div>
+                            <input type="text" name="firstName" value="{{ user.firstName }}">
+                        </div>
+                    </label>
+                </div>
+                <div class="box-input-txt">
+                    <label>
+                        <span>{{ "Nom"|trans }} :</span>
+                        <div>
+                            <input type="text" name="name" value="{{ user.name }}">
+                        </div>
+                    </label>
+                </div>
+                <div class="box-input-txt">
+                    <label>
+                        <span>{{ "Adresse email"|trans }} :</span>
+                        <div>
+                            <input type="email" name="email" value="{{ user.email }}">
+                        </div>
+                    </label>
+                </div>
+                <div>
+                </div>
+                <div class="box-button-submit">
+                    <button type="submit">{{ "Sauvegarder"|trans }}</button>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock content %}
