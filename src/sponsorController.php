@@ -46,6 +46,9 @@ class UserController extends BaseController
         if(isset($res["boxMsgs"])) $data["boxMsgs"] = $res["boxMsgs"];
         if(isset($res["form"]["error"])) $data["form"]["error"] = $res["form"]["error"];
 
+        if(isset($res["boxMsgs"])) $data["boxMsgs"] = $res["boxMsgs"];
+        if(isset($res["form"]["error"])) $data["form"]["error"] = $res["form"]["error"];
+
         $this->getLogin($data);
     }
 }
